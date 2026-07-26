@@ -12,6 +12,12 @@
   document.getElementById('hero-lead').textContent = c.heroIntro;
   document.getElementById('hero-meta').textContent = c.name;
 
+  if (c.photo) {
+    const img = document.getElementById('hero-photo');
+    img.src = c.photo;
+    img.alt = c.name;
+  }
+
   // About
   const aboutBody = document.getElementById('about-body');
   c.about.paragraphs.forEach(p => {
@@ -28,6 +34,39 @@
     card.innerHTML = `<h3>${escapeHtml(s.title)}</h3><p>${escapeHtml(s.description)}</p>`;
     servicesGrid.appendChild(card);
   });
+
+  // Modes of therapy
+  const modesRow = document.getElementById('modes-row');
+  c.modes.forEach(m => {
+    const item = document.createElement('div');
+    item.className = 'mode-item';
+    item.innerHTML = `<span class="mode-label">${escapeHtml(m.label)}</span><span class="mode-note">${escapeHtml(m.note)}</span>`;
+    modesRow.appendChild(item);
+  });
+
+  // Specialization
+  document.getElementById('specialization-population').textContent = c.specialization.population;
+  const concernsTags = document.getElementById('concerns-tags');
+  c.specialization.concerns.forEach(concern => {
+    const tag = document.createElement('span');
+    tag.className = 'tag';
+    tag.textContent = concern;
+    concernsTags.appendChild(tag);
+  });
+
+  // Achievements
+  const achievementsGrid = document.getElementById('achievements-grid');
+  c.achievements.forEach(a => {
+    const card = document.createElement('div');
+    card.className = 'achievement-card';
+    card.innerHTML = `<h3>${escapeHtml(a.title)}</h3><p>${escapeHtml(a.description)}</p>`;
+    achievementsGrid.appendChild(card);
+  });
+
+  // Intake form link
+  if (c.intakeFormUrl) {
+    document.getElementById('intake-link').href = c.intakeFormUrl;
+  }
 
   // Experience timeline
   const timeline = document.getElementById('timeline');
