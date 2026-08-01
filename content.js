@@ -21,7 +21,7 @@ const SITE_CONTENT = {
   about: {
     paragraphs: [
       "I'm a Counselling Psychologist based in Chennai, with an M.Sc. in Counselling Psychology from Loyola College and a B.Sc. in Psychology from Agurchand Manmul Jain College. My work combines active clinical practice with academic facilitation — I've delivered individual and group counselling to 30+ clients while also coordinating departmental mental health programmes as a student leader.",
-      "I currently work part-time with Dhruthi Charitable Trust and run an independent counselling and psychotherapy practice, seeing individuals, couples, and groups both online and in person across Chennai — including home visits where needed.",
+      "I run an independent counselling and psychotherapy practice, seeing individuals, couples, and groups both online and in person across Chennai — including home visits where needed.",
       "My own experience with gaming and social media overuse shaped how I understand this work — not as an outside expert, but as someone who has walked through it. That's the lens I bring into every session, alongside structured, evidence-based approaches like CBT, ACT, and Solution-Focused Brief Therapy."
     ]
   },
@@ -66,12 +66,6 @@ const SITE_CONTENT = {
 
   // ---------- EXPERIENCE (chronological — order matters, so numbered) ----------
   experience: [
-    {
-      year: "2025 – Present",
-      role: "Counselling Psychologist (Part-Time)",
-      org: "Dhruthi Charitable Trust",
-      description: "Individual counselling within a structured, organisation-based setting, maintaining case documentation and coordinating with a wider care team."
-    },
     {
       year: "Jul 2024 – Present",
       role: "Counselling & Psychotherapy",
