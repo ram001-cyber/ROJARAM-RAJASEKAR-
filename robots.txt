@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ram001-cyber.github.io/ROJARAM-RAJASEKAR-/sitemap.xml
