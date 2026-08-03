@@ -1,192 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rojaram Rajasekar — Counselling Psychologist in Chennai</title>
-<meta name="description" content="Counselling Psychologist in Chennai for students & young adults. 1:1, couples counselling & workshops — online, offline, and home visits. Academic stress, career issues, relationships, self-esteem.">
-<meta name="keywords" content="counsellor Chennai, counselling psychologist Chennai, student counselling, couples counselling Chennai, academic stress counselling, career counselling Chennai, therapist Nungambakkam">
-<meta property="og:title" content="Rojaram Rajasekar — Counselling Psychologist in Chennai">
-<meta property="og:description" content="1:1, couples counselling & workshops for students and young adults — online, offline, and home visits across Chennai.">
-<meta property="og:type" content="website">
-<meta name="robots" content="index, follow">
-<link rel="stylesheet" href="styles.css">
-<!-- ============================================================
-     GOOGLE ANALYTICS
-     Once you create your free GA4 property and get a Measurement ID
-     (looks like G-XXXXXXXXXX), uncomment the two script tags below
-     and replace G-XXXXXXXXXX with your real ID in both places.
-============================================================
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ram Rajasekar — Counselling Psychologist, Chennai</title>
+<meta name="description" content="Grounded, practical therapy in Chennai to help you unhook from anxiety and regain balance. CBT, mindfulness-based, and person-centered counselling." />
+
+<!-- Tailwind (CDN, JIT — no build step needed for a static single-file site) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fonts: Sora for a warm, confident display voice · Inter for calm, highly legible body text -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#2C3E50',
+          'ink-deep': '#1E2B38',
+          sage: '#8FBC8F',
+          'sage-deep': '#6B8E63',
+          cream: '#FAF9F6',
+          'cream-dim': '#F1EEE4',
+        },
+        fontFamily: {
+          display: ['Sora', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
 </script>
-============================================================ -->
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background-color: #FAF9F6; }
+  h1, h2, h3, h4, .font-display { font-family: 'Sora', sans-serif; }
+
+  /* ---------- Glassmorphism ---------- */
+  .glass-nav {
+    background: rgba(250, 249, 246, 0.72);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-bottom: 1px solid rgba(44, 62, 80, 0.06);
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  /* ---------- Pure CSS "clay" 3D cards (no 3D models, just layered shadow) ---------- */
+  .card-3d {
+    box-shadow:
+      0 1px 0 rgba(44, 62, 80, 0.05),
+      0 10px 20px -8px rgba(44, 62, 80, 0.14),
+      0 24px 44px -18px rgba(44, 62, 80, 0.16);
+    transition: transform 0.4s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s cubic-bezier(.2,.8,.2,1);
+  }
+  .card-3d:hover {
+    transform: translateY(-8px);
+    box-shadow:
+      0 1px 0 rgba(44, 62, 80, 0.06),
+      0 18px 30px -10px rgba(44, 62, 80, 0.2),
+      0 36px 60px -20px rgba(44, 62, 80, 0.2);
+  }
+
+  /* ---------- Pressable 3D buttons ---------- */
+  .btn-3d-ink {
+    box-shadow: 0 5px 0 #1a2733, 0 10px 22px -6px rgba(44, 62, 80, 0.45);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-3d-ink:hover { transform: translateY(-2px); }
+  .btn-3d-ink:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #1a2733, 0 4px 10px -4px rgba(44, 62, 80, 0.4);
+  }
+  .btn-3d-sage {
+    box-shadow: 0 5px 0 #557a4f, 0 10px 22px -6px rgba(107, 142, 99, 0.45);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-3d-sage:hover { transform: translateY(-2px); }
+  .btn-3d-sage:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #557a4f, 0 4px 10px -4px rgba(107, 142, 99, 0.4);
+  }
+
+  /* ---------- Ambient floating shapes (pure CSS, no images) ---------- */
+  @keyframes float-a { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-10px,-18px) scale(1.04); } }
+  @keyframes float-b { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(14px,12px) scale(0.97); } }
+  @keyframes breathe  { 0%, 100% { transform: scale(1); opacity: .55; } 50% { transform: scale(1.06); opacity: .8; } }
+  .float-a { animation: float-a 9s ease-in-out infinite; }
+  .float-b { animation: float-b 11s ease-in-out infinite; }
+  .breathe { animation: breathe 6s ease-in-out infinite; }
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1.in-view { transition-delay: .08s; }
+  .reveal-delay-2.in-view { transition-delay: .16s; }
+  .reveal-delay-3.in-view { transition-delay: .24s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .float-a, .float-b, .breathe { animation: none; }
+  }
+
+  ::selection { background: #8FBC8F; color: #1E2B38; }
+
+  .grain-divider {
+    background-image: radial-gradient(circle, rgba(44,62,80,0.18) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+</style>
 </head>
-<body>
 
-<nav>
-  <div class="wrap">
-    <div class="nav-name" id="nav-name">—</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Focus</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+<body class="bg-cream text-ink antialiased">
 
-<header class="hero">
-  <div class="hero-photo-wrap">
-    <img class="hero-photo" id="hero-photo" src="" alt="">
-    <div class="hero-photo-ring" aria-hidden="true"></div>
-  </div>
-  <p class="hero-eyebrow" id="hero-eyebrow">—</p>
-  <h1 id="hero-title">—</h1>
-  <p class="lead" id="hero-lead">—</p>
-  <p class="hero-meta" id="hero-meta">—</p>
-  <div class="hero-cta">
-    <a href="#contact" class="btn-primary">Get in touch</a>
-    <a href="#intake" class="btn-secondary">Book a session</a>
+<!-- ============ SKIP LINK (a11y) ============ -->
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-ink focus:text-cream focus:px-4 focus:py-2 focus:rounded-full">Skip to content</a>
+
+<!-- ============ FLOATING NAVBAR ============ -->
+<header class="fixed top-0 inset-x-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-4">
+    <nav class="glass-nav rounded-2xl px-5 sm:px-7 py-3.5 flex items-center justify-between shadow-[0_8px_30px_-12px_rgba(44,62,80,0.25)]">
+      <a href="#home" class="flex items-center gap-2.5 group">
+        <span class="w-9 h-9 rounded-full bg-ink text-cream flex items-center justify-center font-display font-bold text-sm shrink-0">RR</span>
+        <span class="leading-tight">
+          <span class="block font-display font-semibold text-ink text-[15px]">Ram Rajasekar</span>
+          <span class="block text-[11px] tracking-wide text-ink/60 -mt-0.5">Counselling Psychologist</span>
+        </span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 font-medium text-sm text-ink/75">
+        <a href="#home" class="hover:text-ink transition-colors">Home</a>
+        <a href="#modalities" class="hover:text-ink transition-colors">How I Help</a>
+        <a href="#about" class="hover:text-ink transition-colors">Background</a>
+        <a href="#contact" class="hover:text-ink transition-colors">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden sm:inline-flex btn-3d-sage items-center gap-1.5 bg-sage-deep text-white text-sm font-semibold px-5 py-2.5 rounded-full">
+          Book a Session
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="md:hidden w-10 h-10 rounded-full flex items-center justify-center text-ink hover:bg-ink/5 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden mt-2 glass-nav rounded-2xl px-6 py-5 flex flex-col gap-4 text-sm font-medium text-ink/80 shadow-[0_8px_30px_-12px_rgba(44,62,80,0.25)]">
+      <a href="#home" class="mobile-link py-1">Home</a>
+      <a href="#modalities" class="mobile-link py-1">How I Help</a>
+      <a href="#about" class="mobile-link py-1">Background</a>
+      <a href="#contact" class="mobile-link py-1">Contact</a>
+      <a href="#contact" class="mobile-link mt-1 inline-flex justify-center items-center bg-sage-deep text-white font-semibold px-5 py-3 rounded-full">Book a Session</a>
+    </div>
   </div>
 </header>
 
-<section id="about">
-  <div class="wrap">
-    <div class="eyebrow-row">
-      <div class="breath-ring" aria-hidden="true"></div>
-      <span class="eyebrow">About</span>
-    </div>
-    <h2 class="section-title">A grounded approach to modern pressure</h2>
-    <div class="about-body" id="about-body"></div>
-  </div>
-</section>
+<main id="main">
 
-<section id="services">
-  <div class="wrap">
-    <div class="eyebrow-row">
-      <div class="breath-ring" aria-hidden="true"></div>
-      <span class="eyebrow">Focus Areas</span>
-    </div>
-    <h2 class="section-title">How I can help</h2>
-    <div class="services-grid" id="services-grid"></div>
+  <!-- ============ HERO ============ -->
+  <section id="home" class="relative overflow-hidden pt-40 pb-28 md:pt-48 md:pb-36 px-4 sm:px-6">
+    <!-- ambient shapes -->
+    <div aria-hidden="true" class="pointer-events-none absolute -top-24 -left-20 w-80 h-80 rounded-full bg-sage/25 blur-3xl float-a"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute top-1/3 -right-24 w-96 h-96 rounded-full bg-ink/10 blur-3xl float-b"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-sage/20 blur-3xl breathe"></div>
 
-    <div class="modes-row" id="modes-row"></div>
-  </div>
-</section>
+    <div class="max-w-6xl mx-auto relative">
+      <div class="grid md:grid-cols-2 gap-16 md:gap-10 items-center">
 
-<section id="specialization">
-  <div class="wrap">
-    <div class="eyebrow-row">
-      <div class="breath-ring" aria-hidden="true"></div>
-      <span class="eyebrow">Who I work with</span>
-    </div>
-    <h2 class="section-title" id="specialization-population">—</h2>
-    <div class="tag-row" id="concerns-tags"></div>
-  </div>
-</section>
+        <div>
+          <span class="reveal inline-flex items-center gap-2 text-xs font-semibold tracking-wide text-sage-deep bg-sage/15 border border-sage/30 px-4 py-1.5 rounded-full">
+            <span class="w-1.5 h-1.5 rounded-full bg-sage-deep"></span>
+            Individual Therapy · Chennai
+          </span>
 
-<section id="experience">
-  <div class="wrap">
-    <div class="eyebrow-row">
-      <div class="breath-ring" aria-hidden="true"></div>
-      <span class="eyebrow">Experience</span>
-    </div>
-    <h2 class="section-title">Where I've worked</h2>
-    <div class="timeline" id="timeline"></div>
-  </div>
-</section>
+          <h1 class="reveal reveal-delay-1 font-display font-extrabold text-ink text-[2.5rem] leading-[1.08] sm:text-5xl md:text-[3.1rem] mt-6">
+            Navigating Modern Pressure
+          </h1>
 
-<section id="achievements">
-  <div class="wrap">
-    <div class="eyebrow-row">
-      <div class="breath-ring" aria-hidden="true"></div>
-      <span class="eyebrow">Achievements</span>
-    </div>
-    <h2 class="section-title">Beyond the therapy room</h2>
-    <div class="achievements-grid" id="achievements-grid"></div>
-  </div>
-</section>
+          <p class="reveal reveal-delay-2 text-lg sm:text-xl text-ink/75 leading-relaxed mt-5 max-w-lg">
+            Grounded, practical therapy designed to help you <span class="text-sage-deep font-semibold">unhook from anxiety</span> and regain balance — one honest conversation at a time.
+          </p>
 
-<section id="education">
-  <div class="wrap">
-    <div class="eyebrow-row">
-      <div class="breath-ring" aria-hidden="true"></div>
-      <span class="eyebrow">Education</span>
-    </div>
-    <h2 class="section-title">Training & background</h2>
-    <div id="education-list"></div>
-  </div>
-</section>
+          <p class="reveal reveal-delay-2 text-ink/60 leading-relaxed mt-4 max-w-lg">
+            No jargon, no judgement. Just a steady space to slow down, understand what's actually going on, and build a way forward that fits your real life.
+          </p>
 
-<section id="certifications">
-  <div class="wrap">
-    <div class="eyebrow-row">
-      <div class="breath-ring" aria-hidden="true"></div>
-      <span class="eyebrow">Certifications</span>
-    </div>
-    <h2 class="section-title">Additional training</h2>
-    <div class="tag-row" id="cert-tags"></div>
+          <div class="reveal reveal-delay-3 flex flex-wrap items-center gap-4 mt-9">
+            <a href="#contact" class="btn-3d-ink inline-flex items-center gap-2 bg-ink text-cream font-semibold px-7 py-3.5 rounded-full text-sm sm:text-base">
+              Book a Session
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#modalities" class="inline-flex items-center gap-2 text-ink font-semibold px-2 py-3.5 text-sm sm:text-base hover:text-sage-deep transition-colors">
+              See how I can help
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </a>
+          </div>
+        </div>
 
-    <div style="margin-top:50px;">
-      <div class="eyebrow-row">
-        <div class="breath-ring" aria-hidden="true"></div>
-        <span class="eyebrow">Modalities</span>
-      </div>
-      <h2 class="section-title">Therapeutic approaches I draw on</h2>
-      <div class="tag-row" id="modality-tags"></div>
-    </div>
-  </div>
-</section>
+        <!-- Floating credential / reassurance cards, pure CSS -->
+        <div class="reveal reveal-delay-2 relative h-[420px] hidden sm:block">
+          <div class="glass-card card-3d absolute top-0 right-4 w-64 rounded-3xl p-6">
+            <div class="w-11 h-11 rounded-2xl bg-sage/20 flex items-center justify-center text-sage-deep mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-3-8-6-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5-4 8-8 11z" opacity=".0"/><path d="M2 12h4l2 5 4-10 2 5h8"/></svg>
+            </div>
+            <p class="font-display font-semibold text-ink text-[15px] leading-snug">A calm space to think out loud</p>
+            <p class="text-ink/55 text-xs mt-2 leading-relaxed">No fixing, no rushing — just genuine attention.</p>
+          </div>
 
-<section id="intake">
-  <div class="wrap">
-    <div class="eyebrow-row">
-      <div class="breath-ring" aria-hidden="true"></div>
-      <span class="eyebrow">Start here</span>
-    </div>
-    <h2 class="section-title">Book a session</h2>
-    <p class="intake-lead">Fill out a short intake form to get started — I'll reach out to confirm a time and mode (online, in-person, or home visit) that works for you.</p>
-    <a href="#" id="intake-link" target="_blank" rel="noopener" class="btn-primary intake-btn">Open Intake Form →</a>
-  </div>
-</section>
+          <div class="glass-card card-3d absolute top-40 left-0 w-60 rounded-3xl p-6">
+            <div class="w-11 h-11 rounded-2xl bg-ink/10 flex items-center justify-center text-ink mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
+            </div>
+            <p class="font-display font-semibold text-ink text-[15px] leading-snug">M.Sc. Counselling Psychology</p>
+            <p class="text-ink/55 text-xs mt-2 leading-relaxed">Loyola College, Chennai</p>
+          </div>
 
-<section class="contact-section" id="contact">
-  <div class="wrap">
-    <div class="eyebrow-row">
-      <div class="breath-ring" aria-hidden="true"></div>
-      <span class="eyebrow">Get in touch</span>
-    </div>
-    <h2 class="section-title">Let's talk</h2>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="label">Email</div>
-        <div class="value" id="contact-email">—</div>
-      </div>
-      <div class="contact-item">
-        <div class="label">Phone</div>
-        <div class="value" id="contact-phone">—</div>
-      </div>
-      <div class="contact-item">
-        <div class="label">Languages</div>
-        <div class="value" id="contact-languages">—</div>
-      </div>
-      <div class="contact-item">
-        <div class="label">Location</div>
-        <div class="value" id="contact-location">—</div>
+          <div class="glass-card card-3d absolute bottom-0 right-0 w-56 rounded-3xl p-6">
+            <div class="w-11 h-11 rounded-2xl bg-sage/20 flex items-center justify-center text-sage-deep mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <p class="font-display font-semibold text-ink text-[15px] leading-snug">30+ clients supported</p>
+            <p class="text-ink/55 text-xs mt-2 leading-relaxed">Across pro-bono practicum work</p>
+          </div>
+        </div>
       </div>
     </div>
-    <p class="contact-note" id="contact-note"></p>
+  </section>
+
+  <!-- ============ MODALITIES ============ -->
+  <section id="modalities" class="py-24 md:py-32 px-4 sm:px-6 bg-cream-dim/60">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl reveal">
+        <span class="text-xs font-semibold tracking-widest text-sage-deep uppercase">How we'll work together</span>
+        <h2 class="font-display font-bold text-ink text-3xl sm:text-4xl mt-3 leading-tight">Therapy that meets you where you actually are</h2>
+        <p class="text-ink/65 mt-4 leading-relaxed">
+          You don't need to know the "right" technique before you walk in. I draw from a few well-researched approaches and shape sessions around what's actually happening in your life — here's what that can look like in plain terms.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+
+        <div class="reveal card-3d bg-white rounded-3xl p-7">
+          <div class="w-12 h-12 rounded-2xl bg-ink/10 flex items-center justify-center text-ink mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44A2.5 2.5 0 0 1 4.5 15 2.5 2.5 0 0 1 4 10.15 2.5 2.5 0 0 1 4.5 5c0-.66.2-1.28.55-1.8A2.5 2.5 0 0 1 7 2h2.5z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44A2.5 2.5 0 0 0 19.5 15a2.5 2.5 0 0 0 .5-4.85A2.5 2.5 0 0 0 19.5 5c0-.66-.2-1.28-.55-1.8A2.5 2.5 0 0 0 17 2h-2.5z"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-ink text-lg">Cognitive Behavioural Therapy</h3>
+          <p class="text-ink/60 text-sm mt-3 leading-relaxed">When your thoughts feel like they're running the show, CBT helps you notice the patterns, question them, and build steadier ways of responding — so anxious spirals stop feeling automatic.</p>
+        </div>
+
+        <div class="reveal reveal-delay-1 card-3d bg-white rounded-3xl p-7">
+          <div class="w-12 h-12 rounded-2xl bg-sage/20 flex items-center justify-center text-sage-deep mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-4 3-8 8-11 5 3 8 7 8 11a7 7 0 0 1-7 7"/><path d="M11 20v-7"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-ink text-lg">Mindfulness-Based Approaches</h3>
+          <p class="text-ink/60 text-sm mt-3 leading-relaxed">For when your mind is everywhere but the present. We build small, realistic mindfulness habits that lower reactivity and help you feel more in your body, not just stuck in your head.</p>
+        </div>
+
+        <div class="reveal reveal-delay-2 card-3d bg-white rounded-3xl p-7">
+          <div class="w-12 h-12 rounded-2xl bg-ink/10 flex items-center justify-center text-ink mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-ink text-lg">Person-Centered Therapy</h3>
+          <p class="text-ink/60 text-sm mt-3 leading-relaxed">Sometimes you don't need advice — you need to be heard without judgement. This approach puts your pace and your language first, and trusts you to lead the process.</p>
+        </div>
+
+        <div class="reveal reveal-delay-3 card-3d bg-white rounded-3xl p-7">
+          <div class="w-12 h-12 rounded-2xl bg-sage/20 flex items-center justify-center text-sage-deep mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-ink text-lg">Solution-Focused Brief Therapy</h3>
+          <p class="text-ink/60 text-sm mt-3 leading-relaxed">When you need traction, not just talk. We focus on what's already working for you and map out concrete, realistic next steps — especially useful for time-bound or workplace stress.</p>
+        </div>
+      </div>
+
+      <!-- Niche highlight strip, grounded in real research background -->
+      <div class="reveal glass-card mt-10 rounded-3xl px-7 py-6 sm:px-9 sm:py-7 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
+        <div class="w-12 h-12 rounded-2xl bg-ink text-cream flex items-center justify-center shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div>
+          <p class="font-display font-semibold text-ink">Also drawing on focused experience with:</p>
+          <p class="text-ink/60 text-sm mt-1 leading-relaxed">Workplace stress &amp; burnout · Student and academic pressure · The specific anxieties of being early-career and Gen Z — career pressure, comparison, and digital burnout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST & BACKGROUND (subtle) ============ -->
+  <section id="about" class="py-24 md:py-32 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="reveal">
+        <span class="text-xs font-semibold tracking-widest text-sage-deep uppercase">A little about my background</span>
+        <h2 class="font-display font-bold text-ink text-3xl sm:text-4xl mt-3 leading-tight">Training grounded in real people, not just theory</h2>
+      </div>
+
+      <div class="reveal reveal-delay-1 mt-8 text-ink/70 leading-relaxed text-[17px] space-y-5">
+        <p>I hold a <span class="text-ink font-semibold">Master's in Counselling Psychology from Loyola College, Chennai</span>. My training years were spent across clinical, school, and foundation settings — sitting with real people navigating real pressure, which shaped how I practise far more than any textbook did.</p>
+        <p>Alongside coursework, I completed over <span class="text-ink font-semibold">30 hours of pro-bono client work</span> during my practicum, and researched how purpose and social connection shape wellbeing at work — a thread that still informs how I think about stress, burnout, and identity today.</p>
+        <p>Outside client work, I've spent my student years building peer-support systems — from founding an alumni mentorship network to leading student wellbeing initiatives at college. I care about the same thing in both spaces: making support easier to reach.</p>
+      </div>
+
+      <div class="reveal reveal-delay-2 flex flex-wrap gap-3 mt-9">
+        <span class="inline-flex items-center gap-2 bg-white border border-ink/10 rounded-full px-4 py-2 text-xs font-medium text-ink/70">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg>
+          M.Sc. Counselling Psychology, Loyola College
+        </span>
+        <span class="inline-flex items-center gap-2 bg-white border border-ink/10 rounded-full px-4 py-2 text-xs font-medium text-ink/70">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Clinical, school &amp; NGO internships
+        </span>
+        <span class="inline-flex items-center gap-2 bg-white border border-ink/10 rounded-full px-4 py-2 text-xs font-medium text-ink/70">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Research: workplace wellbeing &amp; Gen Z engagement
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT & BOOKING (dual-action, low friction) ============ -->
+  <section id="contact" class="relative py-24 md:py-32 px-4 sm:px-6 bg-ink overflow-hidden">
+    <div aria-hidden="true" class="pointer-events-none absolute -top-32 right-0 w-96 h-96 rounded-full bg-sage/10 blur-3xl float-a"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute bottom-0 -left-24 w-80 h-80 rounded-full bg-sage/10 blur-3xl float-b"></div>
+
+    <div class="max-w-5xl mx-auto relative">
+      <div class="reveal text-center max-w-xl mx-auto">
+        <span class="text-xs font-semibold tracking-widest text-sage uppercase">Ready when you are</span>
+        <h2 class="font-display font-bold text-cream text-3xl sm:text-4xl mt-3 leading-tight">Let's start with a conversation</h2>
+        <p class="text-cream/60 mt-4 leading-relaxed">There's no single "correct" way to begin. Pick whichever feels lighter right now.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-14">
+
+        <!-- Option A: Direct -->
+        <div class="reveal reveal-delay-1 card-3d bg-cream rounded-3xl p-8 sm:p-9 flex flex-col">
+          <div class="w-12 h-12 rounded-2xl bg-sage/20 flex items-center justify-center text-sage-deep mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-ink text-xl">Ready to begin?</h3>
+          <p class="text-ink/60 text-sm mt-3 leading-relaxed flex-1">Fill out a short, confidential intake form so I can understand what's bringing you to therapy. I'll get back to you within 24–48 hours to schedule your first session.</p>
+          <a href="https://forms.google.com/your-intake-form-link" target="_blank" rel="noopener" class="btn-3d-sage mt-7 inline-flex items-center justify-center gap-2 bg-sage-deep text-white font-semibold px-6 py-3.5 rounded-full text-sm">
+            Open Intake Form
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Option B: Soft CTA -->
+        <div class="reveal reveal-delay-2 glass-card rounded-3xl p-8 sm:p-9 flex flex-col border-white/10">
+          <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-cream mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="font-display font-semibold text-cream text-xl">Not ready for a full form?</h3>
+          <p class="text-cream/55 text-sm mt-3 leading-relaxed flex-1">That's completely alright. Drop a quick, informal question by email — no pressure, no commitment, just a starting point.</p>
+          <a href="mailto:hello@ramrajasekar.com?subject=A%20quick%20question&body=Hi%20Ram%2C%0A%0AI%20had%20a%20quick%20question%20before%20booking%20a%20session..." class="mt-7 inline-flex items-center justify-center gap-2 bg-transparent border border-cream/25 text-cream font-semibold px-6 py-3.5 rounded-full text-sm hover:bg-white/5 transition-colors">
+            Drop a Quick Question
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6 12 13 2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <p class="reveal reveal-delay-3 text-center text-cream/40 text-xs mt-10">Currently accepting new individual clients in Chennai · Online sessions available</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="px-4 sm:px-6 py-10 bg-ink-deep">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-cream/50 text-xs">
+    <div class="flex items-center gap-2.5">
+      <span class="w-7 h-7 rounded-full bg-cream/10 text-cream flex items-center justify-center font-display font-bold text-[11px]">RR</span>
+      <span>Ram Rajasekar · Counselling Psychologist, Chennai</span>
+    </div>
+    <p>&copy; <span id="year"></span> Ram Rajasekar. All rights reserved.</p>
   </div>
-</section>
+</footer>
 
-<footer id="footer-text">—</footer>
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+  });
 
-<script src="content.js"></script>
-<script src="render.js"></script>
+  // Lightweight scroll-reveal (Intersection Observer, no external library)
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
